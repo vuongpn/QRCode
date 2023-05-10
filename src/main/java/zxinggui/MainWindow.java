@@ -147,8 +147,10 @@ public class MainWindow extends JFrame
 		// Text
 		btnEncode.setText("Encode");
 		btnEncode.setToolTipText("Encode qr-code from the given information");
-		btnCapture.setText("Capture Screen");
+		btnCapture.setText("Capture Screen(Disabled)");
 		btnCapture.setToolTipText("Decode qr-code from screenshot.");
+		btnCapture.setEnabled(false);
+		btnCapture.setVisible(false);
 
 		// Layout
 		panelGenerator.setLayout(new BorderLayout());
@@ -156,7 +158,7 @@ public class MainWindow extends JFrame
 
 		// Events
 		btnEncode.addActionListener(this);
-		btnCapture.addActionListener(this);
+		//btnCapture.addActionListener(this);
 		
 		// Main Panel
 		add(panelMain);
@@ -309,12 +311,8 @@ public class MainWindow extends JFrame
 	
 	private void showAboutDialog() {
 		String msg = 
-				  "QRCode Desktop, Copyright 2012 Timothy Lin <lzh9102@gmail.com>\n"
-				+ "\n"
-				+ "This program is free software licensed under the \n"
-				+ "Apache Lincense Version 2.\n\n"
-				+ "For more information, please see the project page: \n"
-				+ "http://code.google.com/p/qrcode-desktop/" + "\n";
+				  "QRCode Desktop App Created in 2023\n"
+				 + "\n";
 		JOptionPane.showMessageDialog(this, msg, "QRCode Desktop", JOptionPane.INFORMATION_MESSAGE);
 	}
 	
@@ -347,13 +345,13 @@ public class MainWindow extends JFrame
 	
 	private void captureScreen() {
 		// hide the window
-		setVisible(false);
-		try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) { }
+		//setVisible(false);
+		//try {
+		//	Thread.sleep(500);
+		//} catch (InterruptedException e) { }
 		
-		ScreenCaptureWindow scw = new ScreenCaptureWindow(this);
-		scw.captureScreen();
+		//ScreenCaptureWindow scw = new ScreenCaptureWindow(this);
+		//scw.captureScreen();
 		/* The window will be re-enabled
 		   in screenshotCanceled() or screenshotCaptured(). */
 	}
